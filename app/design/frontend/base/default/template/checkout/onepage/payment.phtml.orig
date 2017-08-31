@@ -19,7 +19,7 @@
  * needs please refer to http://www.magento.com for more information.
  *
  * @category    design
- * @package     rwd_default
+ * @package     base_default
  * @copyright   Copyright (c) 2006-2016 X.commerce, Inc. and affiliates (http://www.magento.com)
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
@@ -33,20 +33,16 @@
 //]]>
 </script>
 <form action="" id="co-payment-form">
-    <div class="fieldset">
-        <?php echo $this->getChildChildHtml('methods_additional', '', true, true) ?>
+    <fieldset>
         <?php echo $this->getChildHtml('methods') ?>
-    </div>
-    <?php echo $this->getBlockHtml('formkey') ?>
+    </fieldset>
 </form>
 <div class="tool-tip" id="payment-tool-tip" style="display:none;">
     <div class="btn-close"><a href="#" id="payment-tool-tip-close" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Close')) ?>"><?php echo $this->__('Close') ?></a></div>
     <div class="tool-tip-content"><img src="<?php echo $this->getSkinUrl('images/cvv.gif') ?>" alt="<?php echo Mage::helper('core')->quoteEscape($this->__('Card Verification Number Visual Reference')) ?>" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Card Verification Number Visual Reference')) ?>" /></div>
 </div>
-<?php echo $this->getChildChildHtml('additional') ?>
 <div class="buttons-set" id="payment-buttons-container">
-    <?php // Moved to CC form ?>
-    <?php /* <p class="required"><?php echo $this->__('* Required Fields') ?></p> */ ?>
+    <p class="required"><?php echo $this->__('* Required Fields') ?></p>
     <p class="back-link"><a href="#" onclick="checkout.back(); return false;"><small>&laquo; </small><?php echo $this->__('Back') ?></a></p>
     <button type="button" class="button" onclick="payment.save()"><span><span><?php echo $this->__('Continue') ?></span></span></button>
     <span class="please-wait" id="payment-please-wait" style="display:none;">

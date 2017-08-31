@@ -23,28 +23,16 @@
  * @copyright   Copyright (c) 2006-2016 X.commerce, Inc. and affiliates (http://www.magento.com)
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
-
 /**
- * Head block Oauth simple pages
- *
- * @var $this Mage_Adminhtml_Block_Page_Head
+ * @see Mage_Adminhtml_Block_Checkout_Formkey
  */
-
-//Code partially copied from adminhtml/default/default/template/page/head.phtml
 ?>
-<meta http-equiv="Content-Type" content="<?php echo $this->getContentType() ?>"/>
-<title><?php echo htmlspecialchars(html_entity_decode($this->getTitle())) ?></title>
-<link rel="icon" href="<?php echo $this->getSkinUrl('favicon.ico') ?>" type="image/x-icon"/>
-<link rel="shortcut icon" href="<?php echo $this->getSkinUrl('favicon.ico') ?>" type="image/x-icon"/>
-
-<script type="text/javascript">
-//<![CDATA[
-    var BLANK_URL = '<?php echo $this->getJsUrl() ?>blank.html';
-    var BLANK_IMG = '<?php echo $this->getJsUrl() ?>spacer.gif';
-    var BASE_URL = '<?php echo $this->getUrl('*') ?>';
-    var SKIN_URL = '<?php echo $this->jsQuoteEscape($this->getSkinUrl()) ?>';
-    var FORM_KEY = '<?php echo $this->getFormKey() ?>';
-//]]>
-</script>
-
-<?php echo $this->getCssJsHtml() ?>
+<?php if ($this->canShow()): ?>
+    <div class="notification-global notification-global-warning">
+        <strong style="color:red">Important: </strong>
+        <span>Formkey validation on checkout disabled. This may expose security risks.
+        We strongly recommend to Enable Form Key Validation On Checkout in
+        <a href="<?php echo $this->getSecurityAdminUrl(); ?>">Admin / Security Section</a>,
+        for protect your own checkout process. </span>
+    </div>
+<?php endif; ?>
