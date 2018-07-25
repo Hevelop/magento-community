@@ -61,3 +61,7 @@ patching file js/varien/payment.js
 patching file skin/frontend/base/default/js/opcheckout.js
 
 
+-e -n 2018-07-25 13:56:52 UTC | SUPEE-9652 | EE_1.14.3.1 | v1 | 4038f0785d828794083f53f10c01aaa6af403523 | Tue Jan 24 15:03:12 2017 +0200 | 9586981e6ca8b255014b242d50b68b88525b0754..4038f0785d828794083f53f10c01aaa6af403523
+patching file lib/Zend/Mail/Transport/Sendmail.php
+
+
